@@ -266,7 +266,7 @@ $databases = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = 'MTQ22TFisdWcXzhqm0sjEas-sS5x_Ek09qRQvkMbA8ssTVo6AV4o1Y5vIWNEAgPUKyUUMwslmg';
 
 /**
  * Deployment identifier.
@@ -752,6 +752,17 @@ $settings['entity_update_backup'] = TRUE;
  * Keep this code block at the end of this file to take full effect.
  */
 #
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
+ if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+   include $app_root . '/' . $site_path . '/settings.local.php';
+ }
+$databases['default']['default'] = array (
+  'database' => 'dcircleci',
+  'username' => 'root',
+  'password' => 'root',
+  'prefix' => '',
+  'host' => 'localhost',
+  'port' => '3306',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+$settings['config_sync_directory'] = 'sites/default/files/config_kYp_sKJKsGeXq_YEdK-TgH8pllB6HU5d_xD6hVOiY0I7tgTu4XsJ2PqRYm5FkNoGlAKydfx9lQ/sync';
